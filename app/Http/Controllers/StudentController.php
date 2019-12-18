@@ -14,7 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::paginate(15);
+        return view('students/index',['students' => $students]);
     }
 
     /**
@@ -24,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students/create');
     }
 
     /**
@@ -35,7 +36,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create($request->all());
+        return redirect()->action('StudentController@index',['action'=>'create','response'=>'success']);
     }
 
     /**
@@ -44,9 +46,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($id)
     {
-        //
+        $student = Student::find($id);
+        return view('student/show',['student'=>$student]);
     }
 
     /**
@@ -55,9 +58,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
-    {
-        //
+    public function edit($id)
+    {   
+        $student = Student::find($id);
+        return view('student/edit',['student'=>$student]);
     }
 
     /**
@@ -67,9 +71,10 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, $id)
     {
-        //
+        Student::find($id)->update($request->all());
+        return redirect()->action('StudentController@index',['action'=>'update','response'=>'success']);
     }
 
     /**
@@ -78,8 +83,9 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+        Student::find($id)->delete();
+        return redirect()->action('StudentController@index',['action'=>'delete','response'=>'success']);
     }
 }
