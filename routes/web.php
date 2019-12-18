@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home_page/landing_page');
 });
 
 Route::resource('students','StudentController');

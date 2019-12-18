@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    font-family: Roboto;
+}
+
+.header-content {
+    background-color: #043F57;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 50px;
+    padding: 1.2rem 1.2rem;
+}
