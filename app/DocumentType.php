@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Working_Day extends Model
+class DocumentType extends Model
 {
     //
 }

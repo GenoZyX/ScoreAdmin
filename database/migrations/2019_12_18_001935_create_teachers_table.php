@@ -18,8 +18,8 @@ class CreateTeachersTable extends Migration
             $table->increments('id');
             
             //Information Table
-            $table->string('names',45);
-            $table->string('lastnames',45);
+            $table->string('teacher_names',45);
+            $table->string('teacher_lastnames',45);
             $table->string('phone_number',20);
             $table->string('document_number',20);
             $table->string('address',100);
