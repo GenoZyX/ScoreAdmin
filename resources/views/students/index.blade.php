@@ -61,7 +61,7 @@
                     <td>{{$student->address}}</td>
                     <td>{{$student->institutional_email}}</td>
                     <td><a href="" class="btn btn-block btn-info" style="width:100px">VER MÁS</a></td>
-                    <td><a href="{{route ('students.)}}" class="btn btn-block btn-warning">ACTUALIZAR</a></td>
+                    <td><a href="{{route ('students.update',[$student->id])}}" class="btn btn-block btn-warning">ACTUALIZAR</a></td>
                     <td>
                         <form action="{{route ('students.destroy',[$student->id])}}" method="post"> 
                             @csrf 
