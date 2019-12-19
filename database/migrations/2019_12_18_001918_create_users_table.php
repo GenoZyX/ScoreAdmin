@@ -26,8 +26,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
 
             //Information Table
-            $table->string('names',45);
-            $table->string('lastnames',45);
+            $table->string('user_names',45);
+            $table->string('user_lastnames',45);
             $table->string('phone_number',20);
             $table->string('document_number',20);
             $table->string('address',100);

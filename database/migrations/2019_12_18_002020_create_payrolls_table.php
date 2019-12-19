@@ -19,7 +19,8 @@ class CreatePayrollsTable extends Migration
             
             //Information Table
             $table->decimal('final_note')->nullable();
-            
+            $table->string('novelty',20)->nullable();
+            $table->text('observation')->nullable();
             //Filds RelationShips
             $table->integer('student_id')->unsigned();
             $table->integer('subject_id')->unsigned();
